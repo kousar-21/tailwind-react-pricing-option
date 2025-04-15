@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from './Link';
+import { Menu, X } from 'lucide-react';
+
+
 
 const NavBar = () => {
     const navigationData = [
         {
             id: 1,
-            name: "Ural Mountains Overview",
+            name: "Ural Overview",
             path: "/ural/mountains"
         },
         {
@@ -15,27 +18,46 @@ const NavBar = () => {
         },
         {
             id: 3,
-            name: "Ural Nature & Wildlife",
+            name: "Nature & Wildlife",
             path: "/ural/nature"
         },
         {
             id: 4,
-            name: "Ural Travel Guide",
+            name: "Travel Guide",
             path: "/ural/travel-guide"
         },
         {
             id: 5,
-            name: "Ural Culture & People",
+            name: "Culture & People",
             path: "/ural/culture"
         }
     ];
+    const [open, setOpen] = useState(false);
+
+    const Links = navigationData.map(route => <Link key={route.id} route={route}></Link>)
 
     return (
-        <nav>
-
-            <ul className='flex'>
+        <nav className='flex justify-between mx-10 mt-5'>
+            <span className='flex' onClick={()=>setOpen(!open)}>
                 {
-                    navigationData.map(route => <Link   key={route.id} route={route}></Link>)
+                    open ? <X className='md:hidden'></X> : <Menu className='md:hidden'></Menu>
+                }
+
+                <ul className={`md:hidden absolute duration-1000 text-lime-500
+                    ${open? 'top-6' : '-top-40'}
+                    bg-amber-200`}>
+                    {
+                        Links
+                    }
+                </ul>
+                
+                <h3 className='ml-4'>My Navbar</h3>
+            </span>
+
+
+            <ul className='md:flex hidden'>
+                {
+                    Links
                 }
             </ul>
 
@@ -50,6 +72,7 @@ const NavBar = () => {
                 <li className="mr-10"><a href="/about">About</a></li>
                 <li className="mr-10"><a href="/blog">Blog</a></li>
             </ul> */}
+            <button>Sign in</button>
 
         </nav>
     );
