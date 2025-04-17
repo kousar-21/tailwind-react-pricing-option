@@ -21,6 +21,16 @@ function App() {
       <header>
         <NavBar></NavBar>
         {/* <DaisyNav></DaisyNav> */}
+        
+        {/* render(<RevolvingDot
+          visible={true}
+          height="80"
+          width="80"
+          color="#4fa94d"
+          ariaLabel="revolving-dot-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+        />) */}
       </header>
 
       <main>
