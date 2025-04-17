@@ -15,6 +15,7 @@
     {
       "id": 2,
       "name": "Standard Plan",
+      "popular": true,
       "price": "$49/month",
       "info": "Ideal for regular gym-goers looking for group classes.",
       "features": [
