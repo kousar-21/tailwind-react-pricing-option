@@ -79,7 +79,7 @@ const resultData = [
 
 
 const ResultChart = () => {
-    console.log(resultData)
+    // console.log(resultData)
     return (
         <div>
             <LineChart width={1000} height={500} data={resultData}>
@@ -89,7 +89,6 @@ const ResultChart = () => {
                 <Line dataKey="math"></Line>
                 <Line dataKey={"chemistry"} stroke='red'></Line>
                 <Line dataKey={'physics'} stroke='orange'></Line>
-
             </LineChart>
 
 
